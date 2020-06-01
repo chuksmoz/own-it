@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:own_it/src/presentation/screen/sign_up/widget/personal_detail_form.dart';
+import 'package:own_it/src/presentation/screen/sign_up/widget/location_detail_form.dart';
 import 'package:own_it/src/presentation/screen/sign_up/widget/sign_up_form_step.dart';
 
-class PersonalDeatail extends StatelessWidget {
+class LocationDeatail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -25,13 +25,13 @@ class PersonalDeatail extends StatelessWidget {
             
             FormSteps(),
             SizedBox(height: 20,),
-            Text('Personal Information', style: TextStyle(
+            Text('Your Location', style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.redAccent,
               fontSize: 16
             ),),
             SizedBox(height: 10,),
-            PersonalDetailForm()
+            LocationDetailForm()
           ],
         ),
       ),

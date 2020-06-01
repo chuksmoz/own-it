@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:own_it/src/presentation/router/router.gr.dart';
 import 'package:own_it/src/presentation/screen/core/widget/custom_radio_button.dart';
 
+
 class PersonalDetailForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,9 @@ class PersonalDetailForm extends StatelessWidget {
                 child: Text('NEXT', style: TextStyle(
                   color: Colors.white
                 ),),
-                onPressed: (){},
+                onPressed: (){
+                  ExtendedNavigator.ofRouter<Router>().pushReplacementNamed(Routes.locationDeatail);
+                },
               )
               ],
           )
@@ -54,6 +57,19 @@ class PersonalDetailForm extends StatelessWidget {
     );
   }
 
+  Widget stateDropdown(){
+    return DropdownButton<String>(
+      hint: Text('Please select your state'),
+      value: '-------',
+      items: <String>['Lagos', 'Anambra'].map(
+        (e) => DropdownMenuItem<String>(
+          child: Text(e),
+          value: e,
+        )
+      ).toList(), 
+      onChanged: null
+    );
+  }
   Widget firstNameInput(){
     return TextFormField(
       decoration: InputDecoration(
